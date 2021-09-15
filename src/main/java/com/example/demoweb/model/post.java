@@ -7,9 +7,10 @@ public class post{
     private int likes;
     private Date creationDate;
 
-    public post(String text, int likes, Date creationDate){
+    public post(String text,  Date creationDate){
         this.text = text;
-        this.likes = likes;
+        int a = 500;
+        this.likes = (int) (Math.random() * ++a);
         this.creationDate = creationDate;
     }
     public Date getCreationDate(){

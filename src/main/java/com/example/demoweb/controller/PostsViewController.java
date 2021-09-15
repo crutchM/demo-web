@@ -22,10 +22,4 @@ public class PostsViewController {
     public String single(@PathVariable("id") long id){
         return "page №" + id;
     }
-
-    @ResponseBody
-    @RequestMapping(path = "/txt", method = RequestMethod.GET)
-    public String txt(){
-        return "text";
-    }
 }
