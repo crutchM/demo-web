@@ -1,17 +1,24 @@
 package com.example.demoweb.model;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Date;
 
+@Entity
 public class Post {
+    @Id
+    @GeneratedValue
     private String text;
     private int likes;
     private Date creationDate;
-    private long id;
-
-    public Post(long id, String text, Date creationDate){
+    private Long id;
+    public Post(){}
+    public Post(Long id, String text, Date creationDate){
         this.text = text;
-        likes = 500;
-        //this.likes = (int) (Math.random() * ++a);
+        likes = 0;
         this.creationDate = creationDate;
     }
     public Date getCreationDate(){
@@ -24,7 +31,7 @@ public class Post {
         return text;
     }
 
-    public long getId(){
+    public Long getId(){
         return id;
     }
     public int getLikes(){

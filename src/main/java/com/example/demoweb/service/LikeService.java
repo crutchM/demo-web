@@ -1,14 +1,15 @@
 package com.example.demoweb.service;
 import com.example.demoweb.model.Post;
+import com.example.demoweb.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class LikeService {
     @Autowired
-    PostService postService;
+    PostRepository postRepository;
     public int like(Long postId){
-        Post post = postService.listAllPosts().get(postId.intValue());
+        Post post = postRepository.findById(postId).get();
         post.setLikes(post.getLikes() + 1);
         return post.getLikes();
     }
